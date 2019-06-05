@@ -35,7 +35,7 @@ public class texto {
         FileWriter archivo=new FileWriter("nombre.txt");
         PrintWriter imprimir=new PrintWriter(archivo);
 
-        for(int i=0; i<4; i++)
+        for(int i=0; i<50; i++)
         {
             System.out.println("Ingrese una palabra: ");
             String palabra=teclado.next();
@@ -55,7 +55,7 @@ public class texto {
         
         try{
             BufferedReader bf =new BufferedReader(new FileReader(direccion));
-            String temp = "";
+          //  String temp = "";
             String bfRead;
             while((bfRead = bf.readLine()) != null){
                 System.out.println(bfRead);
