@@ -17,15 +17,23 @@ public class principal {
     public static void main(String[] args) throws IOException{
         
         
-       
-        texto tex = new texto();
-        tex.crear_archivo();
+       // cra el objeto
+        texto text = new texto();
+        //llama el metodo crear archivo
+        text.crear_archivo();
+        //muestra el contenido del archivo
+        text.leerTxt("nombre.txt");
         
+        // crea el objeto
         binario bin =new binario();
+        // crea el archivo con los numeros del 1 al 50
         bin.crear_binario();
         
-        texto a = new texto();
-       a.leerTxt("nombre.txt");
+        //lee en archivo con los numeros
+        
+        bin.leerTxt("binario.txt");
+        
+        
         
     }
     
