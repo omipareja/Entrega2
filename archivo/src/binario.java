@@ -33,14 +33,12 @@ public class binario {
       
         FileWriter archivo=new FileWriter("binario.txt");
         PrintWriter imprimir=new PrintWriter(archivo);
-        int cont=0;
-        for(int i=0; i<1; i++)
-        {
+        
+        for(int i=0; i<= 50; i++)
             
-            cont=cont+1;
-            
-            
-            imprimir.println(cont);
+        {   
+            imprimir.println(i);
+         
         }
 
         archivo.close();
@@ -48,7 +46,8 @@ public class binario {
 
 }
     
-    public String leerTxt(String direccion){
+
+    public void leerTxt(String direccion){
         
         
         String texto = "";
@@ -58,11 +57,12 @@ public class binario {
             String temp = "";
             String bfRead;
             while((bfRead = bf.readLine()) != null){
+                System.out.println(bfRead);
             
-            temp = temp +bfRead;
+            //temp = temp +bfRead;
             
         }
-            texto =temp;
+           // texto =temp;
             
         }catch(Exception e){
         
@@ -70,7 +70,7 @@ public class binario {
         
         }
         
-        return texto;
+      //  return texto;
         
         
     }
