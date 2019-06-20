@@ -5,6 +5,8 @@
  */
 package ventanas;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author juan
@@ -14,9 +16,32 @@ public class PruebaC extends javax.swing.JPanel {
     /**
      * Creates new form PruebaC
      */
+    private PruebaC pnl;
+    
     public PruebaC() {
         initComponents();
+        unicarespuesta1.setpnl(this);
+        respuestaMultiple1.setpnl(this);
+        abierta1.setpnl(this);
+        
+        
+        
+        
+        tipoPregunta1.setpnl(this);
+       
+        
     }
+    
+      public void setpnl(PruebaC pnl){
+        this.pnl=pnl;
+    }
+    
+    
+    public void cambiar_tarjeta(String tarjeta){
+        ((CardLayout) jPanel2.getLayout()).show(jPanel2,tarjeta);
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,6 +55,11 @@ public class PruebaC extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        tipoPregunta1 = new ventanas.tipoPregunta();
+        unicarespuesta1 = new ventanas.Unicarespuesta();
+        abierta1 = new ventanas.Abierta();
+        respuestaMultiple1 = new ventanas.RespuestaMultiple();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Descripcion"));
 
@@ -50,8 +80,15 @@ public class PruebaC extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(new java.awt.CardLayout());
+        jPanel2.add(tipoPregunta1, "tipo");
+        jPanel2.add(unicarespuesta1, "Unica");
+        jPanel2.add(abierta1, "abierta");
+        jPanel2.add(respuestaMultiple1, "Multiple");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -60,21 +97,32 @@ public class PruebaC extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(366, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private ventanas.Abierta abierta1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private ventanas.RespuestaMultiple respuestaMultiple1;
+    private ventanas.tipoPregunta tipoPregunta1;
+    private ventanas.Unicarespuesta unicarespuesta1;
     // End of variables declaration//GEN-END:variables
 }

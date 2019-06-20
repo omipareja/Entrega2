@@ -5,6 +5,8 @@
  */
 package ventanas;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author juan
@@ -16,8 +18,16 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        inicioD1.setFrm(this);
     }
 
+    public void cambiar_tarjeta(String tarjeta){
+        ((CardLayout) inicio.getLayout()).show(inicio,tarjeta);
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,14 +39,18 @@ public class principal extends javax.swing.JFrame {
 
         inicio = new javax.swing.JPanel();
         inicioD1 = new ventanas.InicioD();
+        pruebaC1 = new ventanas.PruebaC();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         inicio.setLayout(new java.awt.CardLayout());
-        inicio.add(inicioD1, "card2");
+        inicio.add(inicioD1, "inicio");
+        inicio.add(pruebaC1, "prueba");
 
         getContentPane().add(inicio);
+        inicio.getAccessibleContext().setAccessibleName("");
+        inicio.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +93,6 @@ public class principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel inicio;
     private ventanas.InicioD inicioD1;
+    private ventanas.PruebaC pruebaC1;
     // End of variables declaration//GEN-END:variables
 }
