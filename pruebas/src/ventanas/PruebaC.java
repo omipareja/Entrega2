@@ -13,6 +13,7 @@ import java.awt.CardLayout;
  */
 public class PruebaC extends javax.swing.JPanel {
 
+     private principal Frm;
     /**
      * Creates new form PruebaC
      */
@@ -23,10 +24,6 @@ public class PruebaC extends javax.swing.JPanel {
         unicarespuesta1.setpnl(this);
         respuestaMultiple1.setpnl(this);
         abierta1.setpnl(this);
-        
-        
-        
-        
         tipoPregunta1.setpnl(this);
        
         
@@ -42,7 +39,15 @@ public class PruebaC extends javax.swing.JPanel {
     }
     
     
+      public principal getFrm() {
+        return Frm;
+    }
 
+    public void setFrm(principal Frm) {
+        this.Frm = Frm;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

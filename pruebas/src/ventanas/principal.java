@@ -20,6 +20,7 @@ public class principal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         inicioD1.setFrm(this);
+        pruebaC1.setFrm(this);
     }
 
     public void cambiar_tarjeta(String tarjeta){
